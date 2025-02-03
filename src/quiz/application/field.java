@@ -44,3 +44,24 @@ heading.setBounds(750, 60, 300, 45);
         f1.setForeground(Color.WHITE);
         f1.addActionListener(this);
         add(f1);
+
+         f2= new JButton("SPORTS");
+        f2.setBounds(735, 350, 250, 50);
+        f2.setBackground(Color.gray);
+        f2.setForeground(Color.WHITE);
+        f2.addActionListener((ActionListener) this);
+        add(f2);
+         f3 = new JButton("TECHNOLOGY");
+        f3.setBounds(735, 450, 250, 50);
+        f3.setBackground(Color.gray);
+        f3.setForeground(Color.WHITE);
+        f3.addActionListener((ActionListener) this);
+        add(
+        f3);
+        
+         back2= new JButton("BACK");
+        back2.setBounds(735, 550, 250, 50);
+        back2.setBackground(Color.BLACK);
+        back2.setForeground(Color.WHITE);
+        back2.addActionListener((ActionListener) this);
+        add(back2);
