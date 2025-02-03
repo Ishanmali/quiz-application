@@ -65,3 +65,46 @@ heading.setBounds(750, 60, 300, 45);
         back2.setForeground(Color.WHITE);
         back2.addActionListener((ActionListener) this);
         add(back2);
+
+           getContentPane();
+
+        setBackground(Color.yellow);
+        setSize(1200, 700);
+        setLocation(0, 0);
+        setVisible(true);
+    }
+
+    Field() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+ public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == f1) {
+            setVisible(false);
+            new Quiz("user");
+        } 
+        else if (ae.getSource() == f2) {
+            setVisible(false);
+            new Quiz2("user");
+        } else if (ae.getSource() == f3) {
+            setVisible(false);
+            new Quiz("user");}
+        else  {
+            setVisible(false);
+            new difficulty();
+        }
+    }
+    
+   
+     public static void main(String[] args) throws IOException {
+        String String;
+           new Field("user");
+     
+     }
+
+    private void add(ImageIcon i1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    
+
+}
