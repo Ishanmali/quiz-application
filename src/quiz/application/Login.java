@@ -31,3 +31,49 @@ public class Login extends JFrame implements ActionListener{
         heading.setFont(new Font("ALGERIAN", Font.BOLD, 50));
         heading.setForeground(Color.black);
         add(heading);
+
+         JLabel name = new JLabel("ENTER YOUR NAME");
+        name.setBounds(750, 200, 300, 20);
+        name.setFont(new Font("Times New Roman", Font.BOLD, 20));
+        name.setForeground(Color.red);
+        add(name);
+        
+        tfname = new JTextField();
+        tfname.setBounds(750, 250, 300,30 );
+        tfname.setFont(new Font("Times New Roman", Font.BOLD, 20));
+        add(tfname);
+        
+        rules = new JButton("NEXT ");
+        rules.setBounds(900, 300, 120, 30);
+        rules.setBackground(Color.gray);
+        rules.setForeground(Color.WHITE);
+        rules.addActionListener(this);
+        add(rules);
+        
+        back = new JButton("EXIT");
+        back.setBounds(750, 300, 120, 30);
+        back.setBackground(Color.gray);
+        back.setForeground(Color.WHITE);
+        back.addActionListener(this);
+        add(back);
+        
+        setSize(1200, 900);
+        setLocation(0, 0);
+        setVisible(true);
+    }
+
+     @Override
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == rules) {
+            String name = tfname.getText();
+            setVisible(false);
+            new Rules(name);
+        } else if (ae.getSource() == back) {
+            setVisible(false);
+        }
+    }
+    
+    public static void main(String[] args) {
+        new Login();
+    }
+}
