@@ -38,3 +38,161 @@ public class Quiz extends JFrame implements ActionListener {
         qno.setBounds(100, 450, 50, 30);
         qno.setFont(new Font("Tahoma", Font.PLAIN, 24));
         add(qno);
+
+         
+        question = new JLabel();
+        question.setBounds(150, 450, 900, 30);
+        question.setFont(new Font("Tahoma", Font.PLAIN, 24));
+        add(question);
+        
+        questions[0][0] = "What is the capital of Australia?";
+        questions[0][1] = "Sydney";
+        questions[0][2] = "Canberra";
+        questions[0][3] = "Melbourne";
+        questions[0][4] = "Perth";
+
+        questions[1][0] = "Which was the 1st non Test playing country to beat India in an international match?";
+        questions[1][1] = "Sri Lanka";
+        questions[1][2] = "Canada";
+        questions[1][3] = "bangladesh";
+        questions[1][4] = "afghanistan";
+
+        questions[2][0] = "ppl[ll;l;l';l';l';l;ll?";
+        questions[2][1] = "2:3";
+        questions[2][2] = "1:3";
+        questions[2][3] = "1:1";
+        questions[2][4] = "2:1";
+
+        questions[3][0] = "An interface with no fields or methods is known as?";
+        questions[3][1] = "Runnable Interface";
+        questions[3][2] = "Abstract Interface";
+        questions[3][3] = "Marker Interface";
+        questions[3][4] = "CharSequence Interface";
+
+        questions[4][0] = "WHICH ONE IS THE SMALLEST OCEAN IN THE WORLD?";
+        questions[4][1] = "Indian";
+        questions[4][2] = "pacific";
+        questions[4][3] = "atlantic";
+        questions[4][4] = "artic";
+
+        questions[5][0] = "WHICH COUNTRY GIFTED THE ‘STATUE OF LIBERTY’ TO USA IN 1886?";
+        questions[5][1] = "France";
+        questions[5][2] = "Canada";
+        questions[5][3] = "USA";
+        questions[5][4] = "Brazil";
+
+        questions[6][0] = "IN WHICH OCEAN ‘BERMUDA TRIANGLE’ REGION IS LOCATED?";
+        questions[6][1] = "artic";
+        questions[6][2] = "atlantic";
+        questions[6][3] = "pacific";
+        questions[6][4] = "indian";
+
+        questions[7][0] = "WHICH COUNTRY IS ALSO KNOWN AS THE ‘LAND OF RISING SUN’?";
+        questions[7][1] = "USA";
+        questions[7][2] = "Canada";
+        questions[7][3] = "Japan";
+        questions[7][4] = "India";
+
+        questions[8][0] = "WHICH CONTINENT HAS THE HIGHEST NUMBER OF COUNTRIES?";
+        questions[8][1] = "Asia";
+        questions[8][2] = "europe";
+        questions[8][3] = "North America";
+        questions[8][4] = "Africa";
+
+        questions[9][0] = "Which is the largest coffee-producing state of India??";
+        questions[9][1] = "TAMILNADU";
+        questions[9][2] = "ANDHRA PRADESH";
+        questions[9][3] = "KARNATAKA";
+        questions[9][4] = "MAHARASTRA";
+        
+        answers[0][1] = "Canberra";
+        answers[1][1] = "Sri Lanka";
+        answers[2][1] = "2:3";
+        answers[3][1] = "Marker Interface";
+        answers[4][1] = "artic";
+        answers[5][1] = "France";
+        answers[6][1] = "atlantic";
+        answers[7][1] = "Japan";
+        answers[8][1] = "Africa";
+        answers[9][1] = "KARNATAKA";
+        
+        opt1 = new JRadioButton();
+        opt1.setBounds(170, 520, 700, 30);
+        opt1.setBackground(Color.WHITE);
+        opt1.setFont(new Font("Dialog", Font.PLAIN, 20));
+        add(opt1);
+        
+        opt2 = new JRadioButton();
+        opt2.setBounds(170, 560, 700, 30);
+        opt2.setBackground(Color.WHITE);
+        opt2.setFont(new Font("Dialog", Font.PLAIN, 20));
+        add(opt2);
+        
+        opt3 = new JRadioButton();
+        opt3.setBounds(170, 600, 700, 30);
+        opt3.setBackground(Color.WHITE);
+        opt3.setFont(new Font("Dialog", Font.PLAIN, 20));
+        add(opt3);
+        
+        opt4 = new JRadioButton();
+        opt4.setBounds(170, 640, 700, 30);
+        opt4.setBackground(Color.WHITE);
+        opt4.setFont(new Font("Dialog", Font.PLAIN, 20));
+        add(opt4);
+        
+        groupoptions = new ButtonGroup();
+        groupoptions.add(opt1);
+        groupoptions.add(opt2);
+        groupoptions.add(opt3);
+        groupoptions.add(opt4);
+        
+        next = new JButton("Next");
+        next.setBounds(1100, 550, 200, 40);
+        next.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        next.setBackground(new Color(30, 144, 255));
+        next.setForeground(Color.WHITE);
+        next.addActionListener(this);
+        add(next);
+        
+        lifeline = new JButton("50-50 Lifeline");
+        lifeline.setBounds(1100, 630, 200, 40);
+        lifeline.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        lifeline.setBackground(new Color(30, 144, 255));
+        lifeline.setForeground(Color.WHITE);
+        lifeline.addActionListener(this);
+        add(lifeline);
+        
+        submit = new JButton("Submit");
+        submit.setBounds(1100, 710, 200, 40);
+        submit.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        submit.setBackground(new Color(30, 144, 255));
+        submit.setForeground(Color.WHITE);
+        submit.addActionListener(this);
+        submit.setEnabled(false);
+        add(submit);
+        
+        start(count); 
+        
+        setVisible(true);
+
+        public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == next) {
+            repaint();
+            opt1.setEnabled(true);
+            opt2.setEnabled(true);
+            opt3.setEnabled(true);
+            opt4.setEnabled(true);
+            
+            ans_given = 1;
+            if (groupoptions.getSelection() == null) {
+               useranswers[count][0] = "";
+            } else {
+                useranswers[count][0] = groupoptions.getSelection().getActionCommand();
+            }
+            
+            if (count == 8) {
+                next.setEnabled(false);
+                submit.setEnabled(true);
+            }
+            
+            count++;
