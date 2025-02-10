@@ -51,9 +51,9 @@ public class Quiz extends JFrame implements ActionListener {
         questions[0][3] = "Melbourne";
         questions[0][4] = "Perth";
 
-        questions[1][0] = "Which was the 1st non Test playing country to beat India in an international match?";
-        questions[1][1] = "Sri Lanka";
-        questions[1][2] = "Canada";
+        questions[1][0] = "Which was the 1st non Test playing country to beat sri lanka in an international match?";
+        questions[1][1] = "india";
+        questions[1][2] = "australia";
         questions[1][3] = "bangladesh";
         questions[1][4] = "afghanistan";
 
@@ -196,3 +196,97 @@ public class Quiz extends JFrame implements ActionListener {
             }
             
             count++;
+            start(count);
+        } else if (ae.getSource() == lifeline) {
+            if (count == 2 || count == 4 || count == 6 || count == 8 || count == 9) {
+                opt2.setEnabled(false);
+                opt3.setEnabled(false);
+            } else {
+                opt1.setEnabled(false);
+                opt4.setEnabled(false);
+            }
+            lifeline.setEnabled(false);
+        } else if (ae.getSource() == submit) {
+            ans_given = 1;
+            if (groupoptions.getSelection() == null) {
+                useranswers[count][0] = "";
+            } else {
+                useranswers[count][0] = groupoptions.getSelection().getActionCommand();
+            }
+
+            for (int i = 0; i < useranswers.length; i++) {
+                if (useranswers[i][0].equals(answers[i][1])) {
+                    score += 10;
+                } else {
+                    score += 0;
+                }
+            }
+            setVisible(false);
+            new Score(name, score);
+        }
+    }
+    
+    public void paint(Graphics g) {
+        super.paint(g);
+        
+        String time = "Time left - " + timer + " seconds"; // 15
+        g.setColor(Color.RED);
+        g.setFont(new Font("Tahoma", Font.BOLD, 25));
+        
+        if (timer > 0) { 
+            g.drawString(time, 1000, 100);
+        } else {
+            g.drawString("Times up!!", 1000, 100);
+        }
+        
+        timer--; // 14
+        
+        try {
+            Thread.sleep(1000);
+            repaint();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        if (ans_given == 1) {
+            ans_given = 0;
+            timer = 15;
+        } else if (timer < 0) {
+            timer = 15;
+            opt1.setEnabled(true);
+            opt2.setEnabled(true);
+            opt3.setEnabled(true);
+            opt4.setEnabled(true);
+            
+            if (count == 8) {
+                next.setEnabled(false);
+                submit.setEnabled(true);
+            }
+            if (count == 9) { // submit button
+                if (groupoptions.getSelection() == null) {
+                   useranswers[count][0] = "";
+                } else {
+                    useranswers[count][0] = groupoptions.getSelection().getActionCommand();
+                }
+                
+                for (int i = 0; i < useranswers.length; i++) {
+                    if (useranswers[i][0].equals(answers[i][1])) {
+                        score += 10;
+                    } else {
+                        score += 0;
+                    }
+                }
+                setVisible(false);
+                new Score(name, score);
+            } else { // next button
+                if (groupoptions.getSelection() == null) {
+                   useranswers[count][0] = "";
+                } else {
+                    useranswers[count][0] = groupoptions.getSelection().getActionCommand();
+                }
+                count++; // 0 // 1
+                start(count);
+            }
+        }
+        
+    }
