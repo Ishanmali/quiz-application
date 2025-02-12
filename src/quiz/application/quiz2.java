@@ -55,3 +55,10 @@ public class Quiz2 extends JFrame implements ActionListener {
         questions[1][2] = "2013";
         questions[1][3] = "2011";
         questions[1][4] = "2022";
+
+        
+        questions[5][0] = "Who becomes the first cricketer who has hit the six sixes in an over in One Day Internation (50-50) cricket?";
+        questions[5][1] = "Kieron Pollard";
+        questions[5][2] = "Herschelle Gibs";
+        questions[5][3] = "Viv Richard";
+        questions[5][4] = "Yuvraj Singh";
