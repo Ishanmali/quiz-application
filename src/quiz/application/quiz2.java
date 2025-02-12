@@ -43,3 +43,15 @@ public class Quiz2 extends JFrame implements ActionListener {
         question.setFont(new Font("Tahoma", Font.PLAIN, 24));
         add(question);
         
+         
+        questions[0][0] = " When is National  Day celebrated in sri lanka??";
+        questions[0][1] = "Feb 28";
+        questions[0][2] = "AUG 29";
+        questions[0][3] = "FEB 04";
+        questions[0][4] = "feb 02";
+
+        questions[1][0] = "When was National Sports Day first celebrated in stl lanka??";
+        questions[1][1] = "2012";
+        questions[1][2] = "2013";
+        questions[1][3] = "2011";
+        questions[1][4] = "2022";
