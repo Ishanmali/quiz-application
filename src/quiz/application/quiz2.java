@@ -100,3 +100,14 @@ public class Quiz2 extends JFrame implements ActionListener {
         opt1.setFont(new Font("Dialog", Font.PLAIN, 20));
         add(opt1);
         
+        opt2 = new JRadioButton();
+        opt2.setBounds(170, 560, 700, 30);
+        opt2.setBackground(Color.WHITE);
+        opt2.setFont(new Font("Dialog", Font.PLAIN, 20));
+        add(opt2);
+
+        opt3 = new JRadioButton();
+        opt3.setBounds(170, 600, 700, 30);
+        opt3.setBackground(Color.WHITE);
+        opt3.setFont(new Font("Dialog", Font.PLAIN, 20));
+        add(opt3);
