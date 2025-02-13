@@ -82,3 +82,21 @@ public class Quiz2 extends JFrame implements ActionListener {
         questions[3][2] = "Football";
         questions[3][3] = "Cricket";
         questions[3][4] = "Hockey";
+
+        answers[0][1] = "AUG 29";
+        answers[1][1] = "2012";
+        answers[2][1] = "Ashok Chakra";
+        answers[3][1] = "Cricket";
+        answers[4][1] = "2019";
+        answers[5][1] = "Herschelle Gibs";
+        answers[6][1] = "Bayern Munich";
+        answers[7][1] = "Karnam Malleswari";
+        answers[8][1] = "Indian Premier League";
+        answers[9][1] = "The International Tennis Federation The (ITF)";
+        
+        opt1 = new JRadioButton();
+        opt1.setBounds(170, 520, 700, 30);
+        opt1.setBackground(Color.WHITE);
+        opt1.setFont(new Font("Dialog", Font.PLAIN, 20));
+        add(opt1);
+        
