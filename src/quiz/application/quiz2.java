@@ -62,3 +62,10 @@ public class Quiz2 extends JFrame implements ActionListener {
         questions[5][2] = "Herschelle Gibs";
         questions[5][3] = "Viv Richard";
         questions[5][4] = "Yuvraj Singh";
+
+        
+        questions[6][0] = "Which of the following football club wins FIFA Club World Cup 2020?";
+        questions[6][1] = "Bayern Munich";
+        questions[6][2] = "Manchester United";
+        questions[6][3] = "FC Barcelona";
+        questions[6][4] = "Juventus F. C";
