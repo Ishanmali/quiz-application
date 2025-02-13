@@ -69,3 +69,16 @@ public class Quiz2 extends JFrame implements ActionListener {
         questions[6][2] = "Manchester United";
         questions[6][3] = "FC Barcelona";
         questions[6][4] = "Juventus F. C";
+
+        
+        questions[8][0] = "What is the full form of IPL?";
+        questions[8][1] = "Indian Premier League";
+        questions[8][2] = "Indo-Pakistan League";
+        questions[8][3] = "International Premier League";
+        questions[8][4] = "Indian Players League";
+
+        questions[3][0] = "ICC and BCCI are the controlling authorities for which sports in India and the World??";
+        questions[3][1] = "Volleyball";
+        questions[3][2] = "Football";
+        questions[3][3] = "Cricket";
+        questions[3][4] = "Hockey";
