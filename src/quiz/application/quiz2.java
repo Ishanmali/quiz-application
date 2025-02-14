@@ -203,3 +203,53 @@ public class Quiz2 extends JFrame implements ActionListener {
             setVisible(false);
             new Score(name, score);
         }
+          public void paint(Graphics g) {
+        super.paint(g);
+        
+        String time = "Time left - " + timer + " seconds"; // 15
+        g.setColor(Color.RED);
+        g.setFont(new Font("Tahoma", Font.BOLD, 25));
+        
+        if (timer > 0) { 
+            g.drawString(time, 1100, 500);
+        } else {
+            g.drawString("Times up!!", 1100, 500);
+        }
+        
+        timer--; // 14
+        
+        try {
+            Thread.sleep(1000);
+            repaint();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        if (ans_given == 1) {
+            ans_given = 0;
+            timer = 15;
+        } else if (timer < 0) {
+            timer = 15;
+            opt1.setEnabled(true);
+            opt2.setEnabled(true);
+            opt3.setEnabled(true);
+            opt4.setEnabled(true);
+            
+            if (count == 8) {
+                next.setEnabled(false);
+                submit.setEnabled(true);
+            }
+            if (count == 9) { // submit button
+                if (groupoptions.getSelection() == null) {
+                   useranswers[count][0] = "";
+                } else {
+                    useranswers[count][0] = groupoptions.getSelection().getActionCommand();
+                }
+                
+                for (int i = 0; i < useranswers.length; i++) {
+                    if (useranswers[i][0].equals(answers[i][1])) {
+                        score += 10;
+                    } else {
+                        score += 0;
+                    }
+                }
