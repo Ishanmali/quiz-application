@@ -161,3 +161,45 @@ public class Quiz2 extends JFrame implements ActionListener {
             opt2.setEnabled(true);
             opt3.setEnabled(true);
             opt4.setEnabled(true);
+
+            ans_given = 1;
+            if (groupoptions.getSelection() == null) {
+               useranswers[count][0] = "";
+            } else {
+                useranswers[count][0] = groupoptions.getSelection().getActionCommand();
+            }
+            
+            if (count == 8) {
+                next.setEnabled(false);
+                submit.setEnabled(true);
+            }
+            
+            count++;
+            start(count);
+        } else if (ae.getSource() == lifeline) {
+            if (count == 2 || count == 4 || count == 6 || count == 8 || count == 9) {
+                opt2.setEnabled(false);
+                opt3.setEnabled(false);
+            } else {
+                opt1.setEnabled(false);
+                opt4.setEnabled(false);
+            }
+            lifeline.setEnabled(false);
+        } else if (ae.getSource() == submit) {
+            ans_given = 1;
+            if (groupoptions.getSelection() == null) {
+                useranswers[count][0] = "";
+            } else {
+                useranswers[count][0] = groupoptions.getSelection().getActionCommand();
+            }
+
+            for (int i = 0; i < useranswers.length; i++) {
+                if (useranswers[i][0].equals(answers[i][1])) {
+                    score += 10;
+                } else {
+                    score += 0;
+                }
+            }
+            setVisible(false);
+            new Score(name, score);
+        }
