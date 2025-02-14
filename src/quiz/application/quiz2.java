@@ -131,3 +131,33 @@ public class Quiz2 extends JFrame implements ActionListener {
         next.setForeground(Color.WHITE);
         next.addActionListener(this);
         add(next);
+
+        lifeline = new JButton("50-50 Lifeline");
+        lifeline.setBounds(1100, 630, 200, 40);
+        lifeline.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        lifeline.setBackground(new Color(30, 144, 255));
+        lifeline.setForeground(Color.WHITE);
+        lifeline.addActionListener(this);
+        add(lifeline);
+        
+        submit = new JButton("Submit");
+        submit.setBounds(1100, 710, 200, 40);
+        submit.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        submit.setBackground(new Color(30, 144, 255));
+        submit.setForeground(Color.WHITE);
+        submit.addActionListener(this);
+        submit.setEnabled(false);
+        add(submit);
+        
+        start(count);
+        
+        setVisible(true);
+    }
+    
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == next) {
+            repaint();
+            opt1.setEnabled(true);
+            opt2.setEnabled(true);
+            opt3.setEnabled(true);
+            opt4.setEnabled(true);
