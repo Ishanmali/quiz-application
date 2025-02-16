@@ -253,3 +253,40 @@ public class Quiz2 extends JFrame implements ActionListener {
                         score += 0;
                     }
                 }
+                 setVisible(false);
+                new Score(name, score);
+            } else { // next button
+                if (groupoptions.getSelection() == null) {
+                   useranswers[count][0] = "";
+                } else {
+                    useranswers[count][0] = groupoptions.getSelection().getActionCommand();
+                }
+                count++; // 0 // 1
+                start(count);
+            }
+        }
+        
+    }
+    
+    public void start(int count) {
+        qno.setText("" + (count + 1) + ". ");
+        question.setText(questions[count][0]);
+        opt1.setText(questions[count][1]);
+        opt1.setActionCommand(questions[count][1]);
+        
+        opt2.setText(questions[count][2]);
+        opt2.setActionCommand(questions[count][2]);
+        
+        opt3.setText(questions[count][3]);
+        opt3.setActionCommand(questions[count][3]);
+        
+        opt4.setText(questions[count][4]);
+        opt4.setActionCommand(questions[count][4]);
+        
+        groupoptions.clearSelection();
+    }
+    
+    public static void main(String[] args) {
+        new Quiz2("User");
+    }
+}
