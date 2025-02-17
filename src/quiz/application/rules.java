@@ -32,3 +32,23 @@ public class Rules extends JFrame implements ActionListener{
         rules.setFont(new Font("Times New Roman", Font.BOLD, 16));
         rules.setForeground(color.RED);
         rules.setText(
+             "<html>"+ 
+                "1. There are 10 questions from different fields" + "<br><br>" +
+                "2. every question is compulsary" + "<br><br>" +
+                "3. timer of 15 seconds will be running for each question " + "<br><br>" +
+                "4. additional feature for the user is there is an 50-50 option button where the options will be reduced " + "<br><br>" +
+                "5. select only one option and click next for the next question)" + "<br><br>" +
+                "6. 50-50 option can be used only once" + "<br><br>" +
+                "7. if you didnt choose any option during the given time that question will be skipped" + "<br><br>" +
+                "8. For every correct answer 10 points will be awarded." + "<br><br>"+
+            "<html>"
+        );
+        add(rules);
+        
+        back = new JButton("Back");
+        back.setBounds(250, 500, 100, 50);
+        back.setBackground(new Color(30, 144, 254));
+        back.setBackground(Color.BLACK);
+        back.setForeground(Color.WHITE);
+        back.addActionListener(this);
+        add(back);
