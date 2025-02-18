@@ -76,3 +76,15 @@ public class Rules extends JFrame implements ActionListener{
         }
     }
     
+        public static void main(String[] args) {
+        new Rules("User");
+    }
+
+    private static class color {
+
+        private static Color RED;
+
+        public color() {
+        }
+    }
+}
