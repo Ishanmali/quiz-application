@@ -52,3 +52,27 @@ public class Rules extends JFrame implements ActionListener{
         back.setForeground(Color.WHITE);
         back.addActionListener(this);
         add(back);
+
+          start = new JButton("Start");
+        start.setBounds(400, 500, 100, 50);
+        start.setBackground(Color.BLACK);
+        start.setBackground(new Color(30, 144, 254));
+        start.setForeground(Color.WHITE);
+        start.addActionListener(this);
+        add(start);
+        
+        setSize(900, 700);
+        setLocation(0, 0);
+        setVisible(true);
+    }
+    
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == start) {
+            setVisible(false);
+            new difficulty();
+        } else {
+            setVisible(false);
+            new Login();
+        }
+    }
+    
