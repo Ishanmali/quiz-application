@@ -28,3 +28,23 @@ public class Score extends JFrame implements ActionListener {
         lblscore.setBounds(350, 200, 300, 30);
         lblscore.setFont(new Font("Tahoma", Font.BOLD, 26));
         add(lblscore);
+
+                JButton submit = new JButton("Play Again");
+        submit.setBounds(380, 270, 120, 30);
+        submit.setBackground(new Color(30, 144, 255));
+        submit.setForeground(Color.WHITE);
+        submit.addActionListener(this);
+        add(submit);
+        
+        setVisible(true);
+    }
+    
+    public void actionPerformed(ActionEvent ae) {
+        setVisible(false);
+        new Login();
+    }
+
+    public static void main(String[] args) {
+        new Score("User", 0);
+    }
+}
